@@ -3,6 +3,18 @@ import sys
 from collections import defaultdict
 
 def list_ingress_paths(namespace):
+    """
+    List the paths of all Ingresses in the specified namespace grouped by service.
+
+    Args:
+        namespace (str): The namespace to search for Ingresses.
+
+    Returns:
+        lists the paths of all Ingresses in the specified namespace grouped by service.
+
+    Raises:
+        Exception: An error occurred loading the Kubernetes configuration
+    """
 
     # Check if namespace is null
     if not namespace:

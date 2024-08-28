@@ -3,6 +3,25 @@ from kubernetes import client, config
 import argparse
 
 def list_pod_events(namespace, time):
+    """
+    Lists the events of pods in the specified namespace within a certain time range.
+
+    Args:
+        namespace (str): The namespace of the pods.
+        time (str): The time range to filter the events. Use 'm' for minutes, 'hr' for hours, or 'd' for days.
+
+    Returns:
+        Prints the events of pods in the specified namespace within the time range.
+
+    Raises:
+        Exception: An error occurred loading the Kubernetes configuration
+    
+    Usage:
+        python list_pod_events.py <namespace> <time>
+        Example: 
+        python list_pod_events.py default 10m
+
+    """
     # Load the Kubernetes configuration
     config.load_kube_config()
 

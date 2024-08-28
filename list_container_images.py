@@ -3,6 +3,21 @@ import sys
 from collections import defaultdict
 
 def list_container_images(namespace):
+    """
+    List container images grouped by image name.
+
+    Args:
+        namespace (str): The namespace to search for pods.
+
+    Returns:
+        Images and containers in the specified namespace.
+
+    Raises:
+        Exception: An error occurred loading the Kubernetes configuration
+
+    Usage:
+        python list_container_images.py <namespace>
+    """
 
     # Check if namespace is null
     if not namespace:
